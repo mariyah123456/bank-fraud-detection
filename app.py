@@ -37,12 +37,12 @@ Original file is located at
 # # ============================================================
 # @st.cache_data
 # def load_data():
-#     return pd.read_csv('/content/drive/MyDrive/Fraud Detection/df_clean_features.csv')
+#     df = pd.read_csv('df_sample.csv')
 # 
 # @st.cache_resource
 # def load_models():
-#     rf  = joblib.load('/content/drive/MyDrive/Fraud Detection/rf_model.pkl')
-#     xgb = joblib.load('/content/drive/MyDrive/Fraud Detection/xgb_model.pkl')
+#     rf  = joblib.load('rf_model.pkl')
+#     xgb = joblib.load('xgb_model.pkl')
 #     return rf, xgb
 # 
 # df = load_data()
