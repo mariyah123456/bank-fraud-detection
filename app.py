@@ -75,6 +75,7 @@ st.sidebar.markdown("---")
 st.sidebar.markdown(f"**Dataset:** {len(df):,} transactions")
 st.sidebar.markdown(f"**Fraud cases:** {df['isFraud'].sum():,}")
 st.sidebar.markdown(f"**Fraud rate:** {df['isFraud'].mean()*100:.4f}%")
+st.sidebar.info("📊 Displaying a representative sample of the full dataset (4.9M transactions, 8,186 fraud cases)")
 
 # ============================================================
 # PAGE 1 — OVERVIEW
@@ -84,16 +85,16 @@ if page == "Overview":
     st.markdown("### Bank Transaction Fraud Analytics — PaySim Dataset")
     st.markdown("---")
 
-    col1, col2, col3, col4 = st.columns(4)
     with col1:
-        st.metric("Total Transactions", "4,918,983")
+    st.metric("Total Transactions", f"{len(df):,}")
     with col2:
-        st.metric("Fraud Cases", "8,186")
+    st.metric("Fraud Cases", f"{df['isFraud'].sum():,}")
     with col3:
-        st.metric("Fraud Rate", "0.1664%")
+    st.metric("Fraud Rate", f"{df['isFraud'].mean()*100:.4f}%")
     with col4:
-        st.metric("Total Fraud Value", "$12.05B")
-
+    fraud_value = df[df['isFraud']==1]['amount'].sum()
+    st.metric("Total Fraud Value", f"${fraud_value/1e9:.2f}B")
+    
     st.markdown("---")
 
     col1, col2, col3, col4 = st.columns(4)
