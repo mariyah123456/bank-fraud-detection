@@ -85,6 +85,7 @@ if page == "Overview":
     st.markdown("### Bank Transaction Fraud Analytics — PaySim Dataset")
     st.markdown("---")
 
+    col1, col2, col3, col4 = st.columns(4)
     with col1:
         st.metric("Total Transactions", f"{len(df):,}")
     with col2:
