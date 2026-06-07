@@ -86,14 +86,14 @@ if page == "Overview":
     st.markdown("---")
 
     with col1:
-    st.metric("Total Transactions", f"{len(df):,}")
+        st.metric("Total Transactions", f"{len(df):,}")
     with col2:
-    st.metric("Fraud Cases", f"{df['isFraud'].sum():,}")
+        st.metric("Fraud Cases", f"{df['isFraud'].sum():,}")
     with col3:
-    st.metric("Fraud Rate", f"{df['isFraud'].mean()*100:.4f}%")
+        st.metric("Fraud Rate", f"{df['isFraud'].mean()*100:.4f}%")
     with col4:
-    fraud_value = df[df['isFraud']==1]['amount'].sum()
-    st.metric("Total Fraud Value", f"${fraud_value/1e9:.2f}B")
+        fraud_value = df[df['isFraud']==1]['amount'].sum()
+        st.metric("Total Fraud Value", f"${fraud_value/1e9:.2f}B")
     
     st.markdown("---")
 
